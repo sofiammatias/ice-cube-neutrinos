@@ -27,7 +27,7 @@ jobs:
     - name: Run flake8
       run: flake8
     - name: Run Mypy Predictions
-      run: nbqa mypy icecube-predictions.ipynb
+      run: nbqa mypy ..\..\icecube-predictions.ipynb
     - name: Run Mypy Train
-      run: nbqa mypy icecube-train.ipynb
+      run: nbqa mypy ..\..\icecube-train.ipynb
 
