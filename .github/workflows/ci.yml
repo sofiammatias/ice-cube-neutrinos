@@ -26,5 +26,8 @@ jobs:
       run: black --check .
     - name: Run flake8
       run: flake8
-    - name: Run Mypy
-      run: find . -name "*.ipynb" -type f -print0 | xargs -0 -I {} sh -c 'nbqa mypy {} || true'
+    - name: Run Mypy Predictions
+      run: nbqa mypy icecube-predictions.ipynb
+    - name: Run Mypy Train
+      run: nbqa mypy icecube-train.ipynb
+
