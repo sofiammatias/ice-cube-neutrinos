@@ -15,6 +15,7 @@ This competition used a hidden test set of roughly one million events, split bet
 I've ranked #501 in this challenge but that was only because I've simply run the benchmark notebook, which gave a score of 1.018, granting anyone a place in the learderboard. I would probably have ranked lower **near #770 place** with my simple neural network only (this is where people with a model score of 1.55 ranked).  
 
 See more about the Ice Cube Neutrino Observatory [in this paper](https://arxiv.org/abs/1612.05093). 
+
 See more about the Kaggle challenge [in this link](https://www.kaggle.com/competitions/icecube-neutrinos-in-deep-ice/overview).
 
 # Objectives
@@ -31,28 +32,6 @@ The evaluation function for this challenge was the **mean angular error** betwee
 def angular_dist_score(az_true, zen_true, az_pred, zen_pred):
     '''
     calculate the MAE of the angular distance between two directions.
-    The two vectors are first converted to cartesian unit vectors,
-    and then their scalar product is computed, which is equal to
-    the cosine of the angle between the two vectors. The inverse 
-    cosine (arccos) thereof is then the angle between the two input vectors
-    
-    Parameters:
-    -----------
-    
-    az_true : float (or array thereof) 
-        true azimuth value(s) in radian
-    zen_true : float (or array thereof)
-        true zenith value(s) in radian
-    az_pred : float (or array thereof)
-        predicted azimuth value(s) in radian
-    zen_pred : float (or array thereof)
-        predicted zenith value(s) in radian
-    
-    Returns:
-    --------
-    
-    dist : float
-        mean over the angular distance(s) in radian
     '''
     
     if not (np.all(np.isfinite(az_true)) and
@@ -86,6 +65,8 @@ def angular_dist_score(az_true, zen_true, az_pred, zen_pred):
 For each ```event_id```, ```azimuth``` and ```zenith``` must be predicted. Each ```event_id``` contained roughly 150 sensor measures, and each ```batch``` file contained 200 000 events. Each batch was saved in one \*.parquet file, and sensors data in a .csv file. It was required to merge all information together to list all data from all events.
 
 Read more about the challenge description [here](https://www.kaggle.com/competitions/icecube-neutrinos-in-deep-ice).
+
+<img width="608" alt="image" src="https://github.com/sofiammatias/ice-cube-neutrinos/assets/114782592/2f217780-eb53-4984-b96e-6be40a4018f3">
 
 # Results - Data Pipelines for Big Data
 
